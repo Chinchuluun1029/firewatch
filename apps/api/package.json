@@ -1,0 +1,30 @@
+{
+  "name": "@firewatch/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist node_modules"
+  },
+  "dependencies": {
+    "@firewatch/db": "workspace:*",
+    "@firewatch/fire-engine": "workspace:*",
+    "@firewatch/types": "workspace:*",
+    "@hono/node-server": "^1",
+    "@neondatabase/serverless": "^0.10",
+    "better-auth": "^1",
+    "drizzle-orm": "^0.41",
+    "hono": "^4",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4",
+    "typescript": "^5.8"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts"
+}

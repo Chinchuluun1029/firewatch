@@ -1,0 +1,37 @@
+{
+  "name": "@firewatch/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "clean": "rm -rf dist node_modules"
+  },
+  "dependencies": {
+    "@firewatch/api": "workspace:*",
+    "@firewatch/fire-engine": "workspace:*",
+    "@firewatch/types": "workspace:*",
+    "@tanstack/react-query": "^5",
+    "@tanstack/react-router": "^1",
+    "hono": "^4",
+    "react": "^19",
+    "react-dom": "^19",
+    "recharts": "^2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4",
+    "@tanstack/react-router-devtools": "^1",
+    "@tanstack/router-plugin": "^1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "autoprefixer": "^10",
+    "tailwindcss": "^4",
+    "typescript": "^5.8",
+    "vite": "^6"
+  }
+}
