@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch --env-file=../../.env src/index.ts",
     "build": "tsc && node dist/index.js",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist node_modules"
@@ -14,10 +14,13 @@
     "@firewatch/fire-engine": "workspace:*",
     "@firewatch/types": "workspace:*",
     "@hono/node-server": "^1",
+    "@hono/zod-validator": "^0.7.6",
     "@neondatabase/serverless": "^0.10",
     "better-auth": "^1",
+    "dotenv": "^16",
     "drizzle-orm": "^0.41",
     "hono": "^4",
+    "postgres": "^3",
     "zod": "^4"
   },
   "devDependencies": {

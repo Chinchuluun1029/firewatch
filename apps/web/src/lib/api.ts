@@ -15,3 +15,6 @@ import type { AppType } from "@firewatch/api/src/app";
 export const api = hc<AppType>(
   import.meta.env.VITE_API_URL ?? "http://localhost:3001"
 );
+
+/** Base URL for direct fetch calls */
+export const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3001";

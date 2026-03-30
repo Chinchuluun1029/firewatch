@@ -16,12 +16,6 @@ function RootLayout() {
           </Link>
           <div className="flex items-center gap-6 text-sm">
             <Link
-              to="/"
-              className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-fire-600"
-            >
-              Home
-            </Link>
-            <Link
               to="/demo"
               className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-fire-600"
             >
@@ -29,9 +23,27 @@ function RootLayout() {
             </Link>
             <Link
               to="/dashboard"
-              className="rounded-lg bg-fire-500 px-4 py-2 text-sm font-medium text-white hover:bg-fire-600"
+              className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-fire-600"
             >
               Dashboard
+            </Link>
+            <Link
+              to="/accounts"
+              className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-fire-600"
+            >
+              Accounts
+            </Link>
+            <Link
+              to="/goals"
+              className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-fire-600"
+            >
+              Goals
+            </Link>
+            <Link
+              to="/login"
+              className="rounded-lg bg-fire-500 px-4 py-2 text-sm font-medium text-white hover:bg-fire-600"
+            >
+              Sign In
             </Link>
           </div>
         </nav>

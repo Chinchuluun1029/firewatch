@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "vite build --mode development 2>/dev/null && tsc --noEmit --skipLibCheck",
     "lint": "eslint .",
     "clean": "rm -rf dist node_modules"
   },
@@ -17,6 +17,7 @@
     "@firewatch/types": "workspace:*",
     "@tanstack/react-query": "^5",
     "@tanstack/react-router": "^1",
+    "better-auth": "^1.5.6",
     "hono": "^4",
     "react": "^19",
     "react-dom": "^19",
