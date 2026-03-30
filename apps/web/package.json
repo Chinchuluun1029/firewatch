@@ -30,6 +30,7 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4",
     "autoprefixer": "^10",
+    "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^4",
     "typescript": "^5.8",
     "vite": "^6"

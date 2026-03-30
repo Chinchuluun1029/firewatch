@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { visualizer } from "rollup-plugin-visualizer";
 import path from "path";
 
 export default defineConfig({
@@ -9,6 +10,7 @@ export default defineConfig({
     TanStackRouterVite({ routesDirectory: "./src/routes" }),
     react(),
     tailwindcss(),
+    visualizer({ filename: "dist/bundle-analysis.html", gzipSize: true }),
   ],
   resolve: {
     alias: {
