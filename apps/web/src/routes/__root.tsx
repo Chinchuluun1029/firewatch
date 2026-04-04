@@ -52,6 +52,12 @@ function RootLayout() {
               Projections
             </Link>
             <Link
+              to="/insights"
+              className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-fire-600"
+            >
+              Insights
+            </Link>
+            <Link
               to="/login"
               className="rounded-lg bg-fire-500 px-4 py-2 text-sm font-medium text-white hover:bg-fire-600"
             >

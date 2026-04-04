@@ -5,6 +5,7 @@ import { accountsRoute } from "./routes/accounts";
 import { goalsRoute } from "./routes/goals";
 import { budgetsRoute } from "./routes/budgets";
 import { projectionsRoute } from "./routes/projections";
+import { insightsRoute } from "./routes/insights";
 import { auth } from "./lib/auth";
 
 /**
@@ -28,7 +29,8 @@ export function createApp(config?: { corsOrigin?: string }) {
     .route("/api/accounts", accountsRoute)
     .route("/api/goals", goalsRoute)
     .route("/api/budgets", budgetsRoute)
-    .route("/api/projections", projectionsRoute);
+    .route("/api/projections", projectionsRoute)
+    .route("/api/insights", insightsRoute);
 
   return app;
 }
