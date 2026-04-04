@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
-import { visualizer } from "rollup-plugin-visualizer";
 import path from "path";
 
 export default defineConfig({
@@ -10,17 +9,25 @@ export default defineConfig({
     TanStackRouterVite({ routesDirectory: "./src/routes" }),
     react(),
     tailwindcss(),
-    visualizer({ filename: "dist/bundle-analysis.html", gzipSize: true }),
   ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          recharts: ["recharts"],
+          "tanstack-query": ["@tanstack/react-query"],
+        },
+      },
+    },
+  },
   server: {
     port: 5173,
     proxy: {
-      // Proxy API calls to the Hono backend during development
       "/api": {
         target: "http://localhost:3001",
         changeOrigin: true,
