@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProjectionsRouteImport } from './routes/projections'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as GoalsRouteImport } from './routes/goals'
 import { Route as DemoRouteImport } from './routes/demo'
@@ -17,6 +18,11 @@ import { Route as BudgetsRouteImport } from './routes/budgets'
 import { Route as AccountsRouteImport } from './routes/accounts'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ProjectionsRoute = ProjectionsRouteImport.update({
+  id: '/projections',
+  path: '/projections',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/demo': typeof DemoRoute
   '/goals': typeof GoalsRoute
   '/login': typeof LoginRoute
+  '/projections': typeof ProjectionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/demo': typeof DemoRoute
   '/goals': typeof GoalsRoute
   '/login': typeof LoginRoute
+  '/projections': typeof ProjectionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/demo': typeof DemoRoute
   '/goals': typeof GoalsRoute
   '/login': typeof LoginRoute
+  '/projections': typeof ProjectionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/goals'
     | '/login'
+    | '/projections'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/goals'
     | '/login'
+    | '/projections'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/goals'
     | '/login'
+    | '/projections'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,10 +131,18 @@ export interface RootRouteChildren {
   DemoRoute: typeof DemoRoute
   GoalsRoute: typeof GoalsRoute
   LoginRoute: typeof LoginRoute
+  ProjectionsRoute: typeof ProjectionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/projections': {
+      id: '/projections'
+      path: '/projections'
+      fullPath: '/projections'
+      preLoaderRoute: typeof ProjectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoRoute: DemoRoute,
   GoalsRoute: GoalsRoute,
   LoginRoute: LoginRoute,
+  ProjectionsRoute: ProjectionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

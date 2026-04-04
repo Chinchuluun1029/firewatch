@@ -14,3 +14,14 @@ export type {
   ProjectionInput,
   ProjectionYear,
 } from "./calculators";
+
+export {
+  projectMultiAccount,
+  getTaxTreatmentLabel,
+} from "./projections";
+
+export type {
+  AccountProjectionInput,
+  MultiAccountProjectionInput,
+  ProjectionByYear,
+} from "./projections";

@@ -4,6 +4,7 @@ import { logger } from "hono/logger";
 import { accountsRoute } from "./routes/accounts";
 import { goalsRoute } from "./routes/goals";
 import { budgetsRoute } from "./routes/budgets";
+import { projectionsRoute } from "./routes/projections";
 import { auth } from "./lib/auth";
 
 /**
@@ -26,7 +27,8 @@ export function createApp(config?: { corsOrigin?: string }) {
     .on(["POST", "GET"], "/api/auth/*", (c) => auth.handler(c.req.raw))
     .route("/api/accounts", accountsRoute)
     .route("/api/goals", goalsRoute)
-    .route("/api/budgets", budgetsRoute);
+    .route("/api/budgets", budgetsRoute)
+    .route("/api/projections", projectionsRoute);
 
   return app;
 }
