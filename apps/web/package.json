@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "vite build --mode development 2>/dev/null && tsc --noEmit --skipLibCheck",
+    "typecheck": "tsc --noEmit --skipLibCheck",
     "lint": "eslint .",
     "clean": "rm -rf dist node_modules"
   },
@@ -31,7 +31,6 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4",
     "autoprefixer": "^10",
-    "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^4",
     "typescript": "^5.8",
     "vite": "^6"

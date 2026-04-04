@@ -7,17 +7,11 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**"]
     },
-    "lint": {
-      "dependsOn": ["^build"]
-    },
-    "typecheck": {
-      "dependsOn": ["^build"]
-    },
-    "test": {
-      "dependsOn": ["^build"]
-    },
+    "typecheck": {},
+    "test": {},
+    "lint": {},
     "clean": {
       "cache": false
     }
