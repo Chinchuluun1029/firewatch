@@ -3,6 +3,7 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { accountsRoute } from "./routes/accounts";
 import { goalsRoute } from "./routes/goals";
+import { budgetsRoute } from "./routes/budgets";
 import { auth } from "./lib/auth";
 
 /**
@@ -22,9 +23,10 @@ export function createApp(config?: { corsOrigin?: string }) {
     .get("/health", (c) =>
       c.json({ status: "ok", timestamp: new Date().toISOString() })
     )
-    .on(["POST", "GET"], "/api/auth/**", (c) => auth.handler(c.req.raw))
+    .on(["POST", "GET"], "/api/auth/*", (c) => auth.handler(c.req.raw))
     .route("/api/accounts", accountsRoute)
-    .route("/api/goals", goalsRoute);
+    .route("/api/goals", goalsRoute)
+    .route("/api/budgets", budgetsRoute);
 
   return app;
 }
