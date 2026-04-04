@@ -2,13 +2,19 @@
 
 This folder defines the roles, rules, and memory for agentic development of **Firewatch**, a personal FIRE (Financial Independence / Retire Early) tracking platform.
 
+## ⚡ START HERE
+
+**Every session must read [`PLAYBOOK.md`](./PLAYBOOK.md) first.** It contains the current state, how to work with the product owner, and what to do next.
+
 ## How This Works
 
-Every LLM session working on this codebase should read the relevant agent file(s) before doing work. These files define:
+Every LLM session working on this codebase should:
 
-- **Roles**: Who does what (co-founder, security, finance, PM)
-- **Rules**: Constraints and principles that never change
-- **Memory**: Decisions, preferences, and context that persist across sessions
+1. **Read `PLAYBOOK.md`** — current state, owner profile, working principles
+2. **Read the active phase file** — `phases/phase-{N}.md` for what's in progress
+3. **Check `decisions.md`** — for active-phase decisions
+4. **Check `architecture.md`** — for structural context
+5. **Read the relevant specialist agent** — for domain-specific tasks
 
 ## Agent Roster
 
@@ -19,15 +25,9 @@ Every LLM session working on this codebase should read the relevant agent file(s
 | Finance Specialist | [finance.md](./finance.md) | FIRE terminology, tax codes, financial modeling accuracy |
 | Project Manager | [project-manager.md](./project-manager.md) | Priorities, milestones, scope management, timelines |
 
-## Usage
+## Phase History
 
-When starting any LLM-assisted development session on this project:
-
-1. Always read `co-founder.md` first — it has the foundational rules
-2. Read the relevant specialist agent file for the task at hand
-3. Reference `architecture.md` (once created) for structural decisions
-4. Check `decisions.md` (once created) for prior decisions log
-
-## Project: Firewatch
-
-A personal finance tool for tracking FIRE progress, projecting net worth across account types, budgeting, and getting AI-powered insights — built to be a real, shippable product.
+| Phase | File | Status |
+|-------|------|--------|
+| Phase 0: Build v1 | [phases/phase-0.md](./phases/phase-0.md) | ✅ Complete |
+| Phase 1: QA & Design Review | [phases/phase-1.md](./phases/phase-1.md) | 🔄 Active |
